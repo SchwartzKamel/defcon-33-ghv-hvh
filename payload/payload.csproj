@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>C:\Users\hails\Desktop\DEFCON-TOOLS\src\defcon-33-gg\x64</BaseOutputPath>
+    <DefineConstants>SANDBOX;ADDON;DEBUG</DefineConstants>
+    <AssemblyName>package.library.fish.payload</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Automatic move to client! -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(OutDir)$(TargetName).dll&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\sbox\sideload\fish.blocks_and_bullets\&quot;" />
+
+  </Target>
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="package.fish.blocks_and_bullets.dll" />
+    <None Remove="package.fish.blocks_and_bullets.dll.old" />
+    <None Remove="package.fish.blocks_and_bullets.old2.dll" />
+    <None Remove="package.library.facepunch.libevents.dll" />
+    <None Remove="package.library.facepunch.libstates.dll" />
+    <None Remove="package.library.fish.scc.dll" />
+    <None Remove="package.library.fish.sfu.dll" />
+    <None Remove="package.library.fish.sp.dll" />
+    <None Remove="package.library.local.harbinger.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <Analyzer Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Generator.dll" />
+    
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.System.dll" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Engine.dll" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.GameInstance.dll" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Event.dll" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Bind.dll" />
+    <Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Reflection.dll" />
+    
+    <Reference Include="package.base">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\base\.bin\package.base.dll</HintPath>
+    </Reference>
+    
+    <Reference Include="package.fish.blocks_and_bullets">
+      <HintPath>package.fish.blocks_and_bullets.dll</HintPath>
+    </Reference>
+    
+    <Reference Include="package.library.fish.scc">
+      <HintPath>package.library.fish.scc.dll</HintPath>
+    </Reference>
+    
+    <Reference Include="package.library.fish.sfu">
+      <HintPath>package.library.fish.sfu.dll</HintPath>
+    </Reference>
+    
+    <Reference Include="package.library.fish.sp">
+      <HintPath>package.library.fish.sp.dll</HintPath>
+    </Reference>
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Sandbox.Internal.GlobalGameNamespace">
+      <Static>True</Static>
+    </Using>
+  </ItemGroup>
+
+</Project>
