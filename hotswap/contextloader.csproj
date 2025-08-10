@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <SteamPath Condition="'$(SteamPath)' == ''">C:\Program Files (x86)\Steam</SteamPath>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Sandbox" Version="2023.4.2" />
     <Reference Include="Sandbox.AppSystem">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.AppSystem.dll</HintPath>
     </Reference>
@@ -32,7 +34,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.System.dll</HintPath>
+      <HintPath>$(SteamPath)\steamapps\common\sbox\bin\managed\Sandbox.System.dll</HintPath>
     </Reference>
   </ItemGroup>
 

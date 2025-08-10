@@ -7,7 +7,15 @@ namespace defcon33;
 public class Entrypoint
 {
     //private static string PayloadPath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\sideload\\darklands.dlfortwars\\payload.dll";
-    private static string PayloadPath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\sideload\\fish.blocks_and_bullets\\package.library.fish.payload.dll";
+    private static string PayloadPath = System.IO.Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
+        "Steam",
+        "steamapps",
+        "common",
+        "sbox",
+        "sideload",
+        "fish.blocks_and_bullets",
+        "package.library.fish.payload.dll");
 
     public static int Main(string args)
     {
