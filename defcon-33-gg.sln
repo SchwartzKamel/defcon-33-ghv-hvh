@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contextloader", "hotswap\co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "payload", "payload\payload.csproj", "{4937DC31-6B86-45CF-9C5C-F6C466F77779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "defcon33-ghv-fortwars", "defcon33-ghv-fortwars\defcon33-ghv-fortwars.csproj", "{28C5A5A7-C098-4FC6-A599-6066B40CB281}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
